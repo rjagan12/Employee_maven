@@ -9,8 +9,8 @@ import com.i2i.model.Trainer;
 import com.i2i.model.Trainee;
 
 /**
- * <h> EmployeeServiceImpl </h> 
- *  class used to get employee details from EmployeeDaoImpl and  
+ * <h> EmployeeService </h> 
+ *  Interface used to get employee details from EmployeeDaoImpl and  
  *  returns details as object to EmployeeController vice versa
  * 
  * @version 1.0
@@ -35,21 +35,21 @@ public interface EmployeeService {
 
     /**
      * Method used to remove trainees deatils 
-     * @param {@link String }traineeid 
+     * @param {@link int }traineeid 
      * @return {@link String }return status
      */
     public String deleteTraineeDetails(int id) throws Exception;
  
     /**
      * Method used to show trainee Details by id 
-     * @param {@link String}traineeid  
+     * @param {@link int}traineeid  
      * @return {@link Trainee }return traineeDetails
      */
     public Trainee showTraineeDetailsById(int traineeId) throws Exception;
 
     /**
      * Method used to update trainee Details by id 
-     * @param {@link String, Trainee}traineeid, traineeDetails 
+     * @param {@link int, Trainee}traineeid, traineeDetails 
      * @return {@link String}return status
      */
     public String modifyTraineeDetailsById(int traineeId, Trainee traineeDetails) throws Exception;
@@ -70,21 +70,21 @@ public interface EmployeeService {
 
     /**
      * Method used to remove trainers deatils 
-     * @param {@link String }trainerid 
+     * @param {@link int }trainerid 
      * @return {@link String }return status
      */
     public String deleteTrainerDetails(int id) throws Exception;
 
     /**
      * Method used to show trainerDetails by id 
-     * @param {@link String}trainerid  
+     * @param {@link int}trainerid  
      * @return {@link Trainer }return trainerDetails
      */
     public Trainer showTrainerDetailsById(int trainerId) throws Exception;
 
     /**
      * Method used to modify trainer details by id
-     * @param {@link String, Trainer}trainerid and trainer 
+     * @param {@link int, Trainer}trainerid and trainer 
      * @return {@link String}
      */
     public String modifyTrainerDetailsById(int id, Trainer trainerDetails) throws Exception;
@@ -98,7 +98,7 @@ public interface EmployeeService {
 
     /**
      * Method used to assign trainees to trainer 
-     * @param {@link String, Trainee}traineeid and trainee 
+     * @param {@link int, Trainee}traineeid and trainee 
      * @return {@link }
      */
     public String assignTrainees(int trainerId, Trainer trainer) throws Exception;
@@ -106,15 +106,15 @@ public interface EmployeeService {
 
     /**
      * Method used to remove trainers from trainee 
-     * @param {@link String }trainerid 
+     * @param {@link int }trainerid 
      * @return {@link String }return status
      */
-    public String removeIdFromAssignedTrainee(int trainersId) throws Exception;
+    public String removeIdFromAssignedTrainer(int trainersId, Trainer tariner) throws Exception;
 
     /**
      * Method used to remove trainee from trainer 
      * @param {@link String}traineeid 
      * @return {@link String }return status
      */   
-    public String removeIdFromAssignedTrainer(int traineesId) throws Exception;
+    public String removeIdFromAssignedTrainee(int traineesId, Trainee trainee) throws Exception;
 }

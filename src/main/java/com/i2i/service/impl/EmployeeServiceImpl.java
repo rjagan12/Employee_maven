@@ -11,9 +11,12 @@ import com.i2i.service.EmployeeService;
 
 /**
  * <h> EmployeeServiceImpl </h> 
- *  class used to get employee details from EmployeeDaoImpl and  
+ * <p>
+ *  Class used to get employee details from EmployeeDaoImpl and  
  *  returns details as object to EmployeeController vice versa
- * 
+ *  which is implemented from EmployeeService
+ *  </p>
+ *
  * @version 1.0
  * @author Jaganathan R  
  */
@@ -45,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to remove trainees deatils 
-     * @param {@link String }traineeid 
+     * @param {@link int }traineeid 
      * @return {@link String }return status
      */
     @Override
@@ -56,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to show trainee Details by id 
-     * @param {@link String}traineeid  
+     * @param {@link int}traineeid  
      * @return {@link Trainee }return traineeDetails
      */
     @Override
@@ -67,7 +70,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to update trainee Details by id 
-     * @param {@link String, Trainee}traineeid, traineeDetails 
+     * @param {@link int, Trainee}traineeid, traineeDetails 
      * @return {@link String}return status
      */
     @Override
@@ -100,7 +103,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to remove trainers deatils 
-     * @param {@link String }trainerid 
+     * @param {@link int }trainerid 
      * @return {@link String }return status
      */
     @Override
@@ -111,7 +114,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to show trainerDetails by id 
-     * @param {@link String}trainerid  
+     * @param {@link int}trainerid  
      * @return {@link Trainer }return trainerDetails
      */
     @Override
@@ -122,7 +125,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to modify trainer details by id
-     * @param {@link String, Trainer}trainerid and trainer 
+     * @param {@link int, Trainer}trainerid and trainer 
      * @return {@link String}
      */
     @Override
@@ -133,7 +136,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to assign trainers to trainee 
-     * @param {@link String, Trainer}traineeid and  trainer 
+     * @param {@link int, Trainer}traineeid and  trainer 
      * @return {@link }
      */
     @Override
@@ -144,7 +147,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * Method used to assign trainees to trainer 
-     * @param {@link String, Trainee}traineeid and trainee 
+     * @param {@link int, Trainee}traineeid and trainee 
      * @return {@link }
      */
     @Override
@@ -154,25 +157,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     }   
 
     /**
-     * Method used to remove trainers from trainee 
-     * @param {@link String }trainerid 
+     * Method used to remove trainees from trainer 
+     * @param {@link int, Trainer}trainerid trainerDetails
      * @return {@link String }return status
      */
     @Override
-    public String removeIdFromAssignedTrainee(int trainersId) throws Exception {
+    public String removeIdFromAssignedTrainer(int trainersId, Trainer trainer) throws Exception {
         
-	return employeeDao.removeTrainerDetails(trainersId); 
+	return employeeDao.updateTrainerDetails(trainersId, trainer); 
     }
  
     /**
-     * Method used to remove trainee from trainer 
-     * @param {@link String}traineeid 
+     * Method used to remove trainer from trainee 
+     * @param {@link int Trainee}traineeid traineeDetails
      * @return {@link String }return status
      */
     @Override   
-    public String removeIdFromAssignedTrainer(int traineesId) throws Exception {
+    public String removeIdFromAssignedTrainee(int traineesId, Trainee trainee) throws Exception {
 
-	return employeeDao.removeTraineeDetails(traineesId); 
+	return employeeDao.updateTraineeDetails(traineesId,trainee); 
     }                  
   
 }

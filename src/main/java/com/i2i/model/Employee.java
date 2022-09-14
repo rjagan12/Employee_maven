@@ -9,8 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Class is used to define the Employee data type 
+ * <h> Employee </h>
+ * <p>
+ * Class is used to define the Employee data types 
+ * </p>
  *
+ * @version 1.0
+ * @author Jaganathan R 
  */
 @MappedSuperclass
 public class Employee {

@@ -14,8 +14,10 @@ import javax.persistence.Table;
 
 /**
  * <h> Trainee </h> 
- *  class used to get Trainee details from user and  
+ * <p>
+ *  Xlass used to get Trainee details from user and  
  *  set details with setter and getters 
+ * </p>
  * 
  * @version 1.0
  * @author Jaganathan R  

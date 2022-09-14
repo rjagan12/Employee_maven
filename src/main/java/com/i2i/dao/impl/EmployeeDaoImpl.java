@@ -18,9 +18,12 @@ import java.util.List;
 
 /**
  * <h> EmployeeDaoImpl </h> 
- *  class used to get and store employee details from EmployeeDaoImpl and  
- *  returns details as object to EmployeeServiceImpl vice versa
- * 
+ * <p>
+ *  Class used to get and store employee details from EmployeeDaoImpl and  
+ *  returns details as object to EmployeeServiceImpl vice versa which is 
+ *  implemented from EmployeeDao Interface
+ * </p>
+ *
  * @version 1.0
  * @author Jaganathan R  
  */
@@ -28,7 +31,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to add All trainees Details 
-     * @param {@link Trainee}  
+     * @param {@link Trainee}  trainee object
      * @return {@link String }return status
      */
     @Override
@@ -56,7 +59,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to add All trainers Details 
-     * @param {@link Trainer}  
+     * @param {@link Trainer} trainer object
      * @return {@link String }return status
      */
     @Override
@@ -84,7 +87,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to show traineeDetails by id 
-     * @param {@link String}traineeid  
+     * @param {@link int}traineeid  
      * @return {@link Trainee }return traineeDetails
      */
     @Override
@@ -106,7 +109,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to show trainerDetails by id 
-     * @param {@link String}trainerid  
+     * @param {@link int}trainerid  
      * @return {@link Trainer }return trainerDetails
      */
     @Override
@@ -138,7 +141,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
         List<Trainee> trainees = new ArrayList<>(); 
 
         try (Session session = ConfigureClass.getFactory().openSession();) {
-            Criteria criteria = session.createCriteria(Trainer.class).add(Restrictions.eq("isDeleted", false));
+            Criteria criteria = session.createCriteria(Trainee.class).add(Restrictions.eq("isDeleted", false));
             trainees = criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
         } catch(HibernateException e) {
@@ -171,7 +174,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to remove trainees deatils 
-     * @param {@link String }traineeid 
+     * @param {@link int}traineeid 
      * @return {@link String }return status
      */
     @Override
@@ -200,7 +203,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to remove trainers deatils
-     * @param {@link String }trainerid 
+     * @param {@link int }trainerid 
      * @return {@link String }return status
      */
     @Override
@@ -230,7 +233,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to update trainee Details by id 
-     * @param {@link String, Trainee}traineeid, traineeDetails 
+     * @param {@link int, Trainee}traineeid, traineeDetails 
      * @return {@link String}return status
      */
     @Override
@@ -258,7 +261,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     /**
      * Method used to update trainer Details by id 
-     * @param {@link String, Trainer}trainerid, trainerDetails 
+     * @param {@link int, Trainer}trainerid, trainerDetails 
      * @return {@link String}return status
      */
     @Override

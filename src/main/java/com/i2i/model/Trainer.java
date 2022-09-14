@@ -14,9 +14,11 @@ import javax.persistence.Table;
 
 /**
  * <h> Trainer </h> 
- *  Pojo class used to get and set trainer details and  
+ * <p>
+ *  Pojo Class used to get and set trainer details and  
  *  returns the details with extends employee class.
- * 
+ *  </p>
+ *
  * @version 1.0
  * @author Jaganathan R  
  */

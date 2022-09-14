@@ -1,15 +1,15 @@
 package com.i2i.util;
 
-import org.apache.commons.validator.routines.EmailValidator;
 import java.time.LocalDate;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.List;
+import org.apache.commons.validator.routines.EmailValidator;
 
+import com.i2i.exception.NullListException;
 import com.i2i.model.Trainer;
 import com.i2i.model.Trainee;
-import com.i2i.exception.NullListException;
 
 /**
  * <h> CommonUtil </h> 
@@ -73,7 +73,11 @@ public class CommonUtil {
         return uniqueId;
     }
     
-
+    /**
+     * Method used to check the list have values or not 
+     * @param {@link List< Trainer>} list of trainers
+     * @return {@link boolean}returns true or Exception
+     */
     public static boolean validateTrainers(List< Trainer> Trainers) throws NullListException {
         if (Trainers.size() == 0) {
              
@@ -83,6 +87,11 @@ public class CommonUtil {
         return true;
     } 
 
+    /**
+     * Method used to check the list have values or not 
+     * @param {@link List< Trainee>} list of trainees
+     * @return {@link boolean}returns true or Exception
+     */
     public static boolean validateTrainees(List< Trainee> Trainees) throws NullListException {
         if (Trainees.size()==0) {
             throw new NullListException(" ******** THERE IS NO RECORD IN DATABASE *********** ");
